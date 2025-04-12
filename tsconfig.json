@@ -5,9 +5,17 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": false,
+    "noEmitOnError": false,
+    "skipLibCheck": true,
+    "isolatedModules": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
   }
 }

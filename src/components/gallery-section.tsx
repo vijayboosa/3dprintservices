@@ -327,12 +327,12 @@ const getMaterialColor = (material: string) => {
 };
 
 export default function GallerySection() {
-  const [activeTab, setActiveTab] = useState<string>("all");
+  // const [activeTab, setActiveTab] = useState<string>("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedIndustry, setSelectedIndustry] = useState<string>("All");
   const [selectedMaterial, setSelectedMaterial] = useState<string>("All");
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
-
+  console.log(selectedItem);
   // Get unique categories, industries, and materials
   const categories = [
     "All",

@@ -350,6 +350,8 @@ export default function UploadEstimationForm() {
   const [dimensions, setDimensions] = useState({ x: 100, y: 100, z: 100 });
   const [priority, setPriority] = useState("standard");
 
+  console.log(setDimensions);
+
   // Pricing calculation
   const [price, setPrice] = useState({
     basePrice: 0,
@@ -413,6 +415,7 @@ export default function UploadEstimationForm() {
 
   // Simulate file upload with progress
   const simulateUpload = (selectedFile: File) => {
+    console.log(selectedFile);
     setIsUploading(true);
     setUploadProgress(0);
 
