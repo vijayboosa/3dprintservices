@@ -166,13 +166,13 @@ export default function AboutPage() {
           </section>
 
           {/* Company Timeline */}
-          <TimelineSection />
+          {/* <TimelineSection /> */}
 
           {/* Team Section */}
-          <TeamSection />
+          {/* <TeamSection /> */}
 
           {/* Facilities Section */}
-          <FacilitiesSection />
+          {/* <FacilitiesSection /> */}
 
           {/* CTA Section */}
           <section className="mt-20 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-xl p-8 border border-primary/20">
@@ -199,7 +199,7 @@ export default function AboutPage() {
                   <Button
                     asChild
                     variant="outline"
-                    className="border-white/20 text-white hover:bg-white/10 gap-2"
+                    className="border-white/20 text-black hover:text-white hover:bg-white/10 gap-2"
                   >
                     <Link to="/contact">
                       <MessageCircle className="h-4 w-4" />
