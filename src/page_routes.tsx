@@ -6,6 +6,7 @@ import GalleryPage from "./pages/gallery";
 import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import UploadPage from "./pages/upload";
+import ServicesPage from "./pages/service";
 
 function BaseLayout() {
   return (
@@ -21,6 +22,7 @@ export default function PageRoutes() {
     <Routes>
       <Route element={<BaseLayout />}>
         <Route index element={<Home />} />
+        <Route path="services" element={<ServicesPage />} />
         <Route path="gallery" element={<GalleryPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactPage />} />
