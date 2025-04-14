@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router";
 import { useLocation } from "react-router-dom";
+// import logo from "@/assets/logo.png";
 
 import { Menu, CuboidIcon as Cube, Upload } from "lucide-react";
 
@@ -55,6 +56,7 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2">
             <div className="bg-primary rounded-lg p-1.5">
               <Cube className="h-6 w-6 text-primary-foreground" />
+              {/* <img src={logo} alt="3D-ZNation Logo" /> */}
             </div>
             <span className="text-white font-bold text-xl hidden sm:inline-block drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]">
               3D-ZNation

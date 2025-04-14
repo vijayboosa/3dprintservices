@@ -209,7 +209,7 @@ export default function ContactForm() {
             <Button
               type="button"
               variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 gap-2"
+              className="border-white/20 text-white gap-2 bg-transparent hover:bg-white"
               onClick={() => document.getElementById("file")?.click()}
             >
               <Upload className="h-4 w-4" />

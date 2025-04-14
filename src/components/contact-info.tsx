@@ -27,26 +27,18 @@ type OfficeLocation = {
 const officeLocations: OfficeLocation[] = [
   {
     id: "hq",
-    name: "Headquarters",
-    address: "123 Innovation Way, San Francisco, CA 94107",
-    phone: "(415) 555-0123",
-    email: "info@3d3D-ZNation.com",
+    name: "Office Address",
+    address: "8-5-43, Khammam, Telanagana",
+    phone: "+91 9063105023",
+    email: "varun@3d-Znation.com",
     mapUrl: "https://maps.google.com",
   },
   {
     id: "east",
-    name: "East Coast Office",
-    address: "456 Tech Square, Boston, MA 02210",
-    phone: "(617) 555-0189",
-    email: "boston@3d3D-ZNation.com",
-    mapUrl: "https://maps.google.com",
-  },
-  {
-    id: "midwest",
-    name: "Midwest Office",
-    address: "789 Manufacturing Blvd, Chicago, IL 60607",
-    phone: "(312) 555-0156",
-    email: "chicago@3d3D-ZNation.com",
+    name: "Plant Adress",
+    address: "32/31, tiruvallr street near nagar, Tamil Nadu",
+    phone: "+91 9063105023",
+    email: "info@3d-Znation.com",
     mapUrl: "https://maps.google.com",
   },
 ];
@@ -130,7 +122,7 @@ export default function ContactInfo() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-white/20 text-white hover:bg-white/10 gap-2"
+                  className="border-white/20 hover:bg-white/10 hover:text-white text-black gap-2"
                   asChild
                 >
                   <Link
@@ -149,7 +141,7 @@ export default function ContactInfo() {
       </div>
 
       {/* Social Media */}
-      <div className="bg-[#1A2327] rounded-xl border border-white/10 p-6 md:p-8">
+      {/* <div className="bg-[#1A2327] rounded-xl border border-white/10 p-6 md:p-8">
         <h2 className="text-2xl font-bold text-white mb-6">Connect With Us</h2>
 
         <div className="flex flex-wrap gap-4">
@@ -217,7 +209,7 @@ export default function ContactInfo() {
             </Link>
           </Button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
