@@ -30,15 +30,15 @@ const officeLocations: OfficeLocation[] = [
     name: "Office Address",
     address: "8-5-43, Khammam, Telanagana",
     phone: "+91 9063105023",
-    email: "varun@3d-Znation.com",
+    email: "varun@3d-znation.com",
     mapUrl: "https://maps.google.com",
   },
   {
     id: "east",
-    name: "Plant Adress",
+    name: "Plant Address",
     address: "32/31, tiruvallr street near nagar, Tamil Nadu",
     phone: "+91 9063105023",
-    email: "info@3d-Znation.com",
+    email: "info@3d-znation.com",
     mapUrl: "https://maps.google.com",
   },
 ];

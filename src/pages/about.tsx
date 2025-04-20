@@ -1,6 +1,7 @@
 import Image from "@/components/image";
 import { Link } from "react-router";
 import PageHead from "@/components/page-head";
+import transform_ideas from "@/assets/transform-ideas.png";
 
 import {
   Users,
@@ -65,7 +66,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="https://kzmgojww2dludpdpzs6n.lite.vusercontent.net/placeholder.svg?height=800&width=600"
+                  src={transform_ideas}
                   alt="3D-ZNation facility"
                   fill
                   className="object-cover"
@@ -75,7 +76,7 @@ export default function AboutPage() {
                   <div className="flex gap-2 mb-2">
                     <div className="bg-primary/20 backdrop-blur-sm px-3 py-1 rounded-full">
                       <span className="text-primary text-sm font-medium">
-                        Est. 2015
+                        Est. 2022
                       </span>
                     </div>
                     <div className="bg-secondary/20 backdrop-blur-sm px-3 py-1 rounded-full">

@@ -112,7 +112,7 @@ export default function ServicesPage() {
               icon="hammer"
               color="bg-[#607D8B]"
               features={["High strength", "Heat resistant", "Functional parts"]}
-              startingPrice={99.99}
+              startingPrice={999.0}
             />
           </div>
 
@@ -648,7 +648,7 @@ function ServiceCard({
             <div>
               <p className="text-xs text-white/60">Starting at</p>
               <p className="text-xl font-bold text-white">
-                ${startingPrice.toFixed(2)}
+                ₹{startingPrice.toFixed(2)}
               </p>
             </div>
             <Button variant="secondary" size="sm" asChild>
@@ -894,7 +894,7 @@ function PricingCard({
       </CardHeader>
       <CardContent>
         <div className="flex items-baseline mb-6">
-          <span className="text-3xl font-bold text-white">${price}</span>
+          <span className="text-3xl font-bold text-white">₹{price}</span>
           <span className="text-white/60 ml-1">/ unit</span>
         </div>
         <ul className="space-y-3">
