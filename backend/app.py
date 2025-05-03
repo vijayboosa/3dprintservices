@@ -39,8 +39,8 @@ def send_email_background(subject, body, to_email, file_path):
                 msg.add_attachment(f.read(), maintype='application', subtype='octet-stream', filename=os.path.basename(file_path))
 
         with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT) as smtp:
-        smtp.login(EMAIL_USER, EMAIL_PASS)
-        smtp.send_message(msg)
+            smtp.login(EMAIL_USER, EMAIL_PASS)
+            smtp.send_message(msg)
 
     Thread(target=send).start()
 
