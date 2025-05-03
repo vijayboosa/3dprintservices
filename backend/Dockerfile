@@ -7,4 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
+# Run with Gunicorn (production WSGI server)
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
