@@ -68,7 +68,7 @@ def contact():
     send_email_background(
         subject=f"[Contact] {subject} - {name}",
         body=email_body,
-        to_email="support@3dznation.com",
+        to_email="support@3d-znation.com",
         file_path=filepath
     )
 

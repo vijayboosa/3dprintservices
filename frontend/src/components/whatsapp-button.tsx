@@ -31,7 +31,7 @@ export default function WhatsAppButton() {
   const formattedPhone = "9090909090";
 
   // Create WhatsApp URL
-  const whatsappUrl = `https://wa.me/${formattedPhone}`;
+  const whatsappUrl = `https://web.whatsapp.com/send?phone=919063105023&text=Hello%2C%0D%0Alet%20me%20know%20more%20info%20about%20%20Welcome%20to%203dznation%20%E2%80%93%203D%20Printing%20Solution%2C%20https%3A%2F%2F3dznation.com%2F`;
 
   return (
     <>
