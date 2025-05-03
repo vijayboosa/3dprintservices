@@ -6,6 +6,11 @@ import smtplib
 from email.message import EmailMessage
 from threading import Thread
 
+EMAIL_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
+EMAIL_PORT = int(os.environ.get("SMTP_PORT", 465))
+EMAIL_USER = os.environ.get("SMTP_USER")
+EMAIL_PASS = os.environ.get("SMTP_PASS")
+
 app = Flask(__name__)
 CORS(app, origins=["https://3dznation.com"])
 
@@ -25,7 +30,7 @@ def send_email_background(subject, body, to_email, file_path):
     def send():
         msg = EmailMessage()
         msg['Subject'] = subject
-        msg['From'] = 'your_email@gmail.com'
+        msg['From'] = EMAIL_USER
         msg['To'] = to_email
         msg.set_content(body)
 
@@ -33,9 +38,9 @@ def send_email_background(subject, body, to_email, file_path):
             with open(file_path, 'rb') as f:
                 msg.add_attachment(f.read(), maintype='application', subtype='octet-stream', filename=os.path.basename(file_path))
 
-        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-            smtp.login('your_email@gmail.com', 'your_app_password')
-            smtp.send_message(msg)
+        with smtplib.SMTP_SSL(EMAIL_HOST, EMAIL_PORT) as smtp:
+        smtp.login(EMAIL_USER, EMAIL_PASS)
+        smtp.send_message(msg)
 
     Thread(target=send).start()
 
