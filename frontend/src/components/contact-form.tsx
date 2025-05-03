@@ -50,29 +50,54 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus("idle");
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const formData = new FormData();
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("phone", formState.phone);
+      formData.append("subject", formState.subject);
+      formData.append("message", formState.message);
+      if (formState.file) {
+        formData.append("file", formState.file);
+      }
+
+      const response = await fetch("https://api.3dznation.com/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setFormState({
+            name: "",
+            email: "",
+            phone: "",
+            subject: "",
+            message: "",
+            file: null,
+          });
+          setFileName("");
+          setSubmitStatus("idle");
+        }, 5000);
+      } else {
+        const data = await response.json();
+        setSubmitStatus("error");
+        console.error("Form submission error:", data.error || "Unknown error");
+      }
+    } catch (error) {
+      console.error("Network or server error:", error);
+      setSubmitStatus("error");
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus("success");
-
-      // Reset form after successful submission
-      setTimeout(() => {
-        setFormState({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: "",
-          file: null,
-        });
-        setFileName("");
-        setSubmitStatus("idle");
-      }, 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -216,7 +241,7 @@ export default function ContactForm() {
               Choose File
             </Button>
             <span className="text-white/60 text-sm">
-              {fileName ? fileName : "No file chosen (Max 50MB)"}
+              {fileName ? fileName : "No file chosen (Max 25MB)"}
             </span>
             <input
               id="file"

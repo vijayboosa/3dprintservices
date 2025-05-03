@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app, origins=["https://3dznation.com"])
 
 UPLOAD_FOLDER = 'uploads'
-ALLOWED_EXTENSIONS = {'pdf', 'stl', 'obj', 'step', 'igs', 'gcode'}
+ALLOWED_EXTENSIONS = {'pdf', 'stl', 'obj', 'step', 'igs', 'gcode', "3mf", "amf", "jpg", "png", "jpeg"}
 MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
