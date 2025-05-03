@@ -1,0 +1,48 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# Environment/config files
+.env
+*.env
+.env.*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs and runtime
+*.log
+*.pid
+*.swp
+*.swo
+*.bak
+
+# Uploaded files (optional: if not stored in repo)
+uploads/
+
+# Cache
+.cache/
+.pytest_cache/
+.coverage
+.tox/
+.mypy_cache/
+
+# VSCode / JetBrains / IDEs
+.vscode/
+.idea/
+
+# Docker-related
+*.tar
+*.gz
+docker-compose.override.yml

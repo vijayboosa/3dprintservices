@@ -13,7 +13,7 @@
     "isolatedModules": false,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["frontend/src/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true

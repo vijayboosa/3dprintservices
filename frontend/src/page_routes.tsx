@@ -7,11 +7,13 @@ import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import UploadPage from "./pages/upload";
 import ServicesPage from "./pages/service";
+import WhatsAppButton from "./components/whatsapp-button";
 
 function BaseLayout() {
   return (
     <>
       <Navbar />
+      <WhatsAppButton />
       <Outlet />
     </>
   );
