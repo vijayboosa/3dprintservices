@@ -1,31 +1,10 @@
-# syntax=docker/dockerfile:1.4
-
-FROM python:3.12-slim-bookworm AS base
-
-# Install curl, git and build tools
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl ca-certificates gcc g++ git && \
-    rm -rf /var/lib/apt/lists/*
-
-# Install uv globally
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Ensure uv is available in PATH
-ENV PATH="/root/.cargo/bin:$PATH"
+FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy project metadata
-COPY pyproject.toml uv.lock ./
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Install dependencies
-RUN uv sync --frozen --no-dev
-
-# Copy source code
 COPY . .
 
-# Expose Flask port
-EXPOSE 5000
-
-# Run app
-CMD ["uv", "run", "python", "app.py"]
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]
