@@ -44,8 +44,10 @@ def send_email_background(subject, body, to_email, file_path):
 
     Thread(target=send).start()
 
-@app.route('/api/contact', methods=['POST'])
+@app.route("/api/contact", methods=["POST", "OPTIONS"])
 def contact():
+    if request.method == "OPTIONS":
+        return '', 200  # Handle preflight
     name = request.form.get('name')
     email = request.form.get('email')
     phone = request.form.get('phone')
